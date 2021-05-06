@@ -1,0 +1,95 @@
+\chapter{Introduction} %fazer virar uma introduction
+In this chapter we are going to present the necessary background information in order to understand what motivated this work. First, we will discuss the concept of game design and how it evolved through the ages. Then we will present some information about the game industry and the costs of developing a game. Lastly we will explain what procedural content generation (PCG) is and show a division of categories to better understand it.
+
+After the motivation of the work is explained, we will present our objectives and preface the content of the next chapters. 
+
+\section{Game Design}
+
+Designing a game involves a conjunction of many different disciplines, for example: art, animation, sound, story, character creation etc. Although game design is widely used in the industry to refer only to the design of the gameplay aspect, all the separate parts of design must work well together in order to create a good experience to the player \cite{zubek:2020}.
+
+Throughout video game history, the importance of game design has increased. Designers of early games like Pong, shown here on Figure \ref{fig:pong}, or Spacewar! had very limited computing resources to work with, therefore it makes sense that they are simple and straightforward. There were little to no audio output, graphics were very primitive and gameplay was simple, sometimes borrowing from well-established games e.g. Table tennis (the sport) in the case of Pong \cite{wolf:2007}.
+
+\begin{figure}[h]
+    \caption{Atari's PONG arcade released in 1972}
+    \centerline{\includegraphics{images/introduction/PongScreenAtariOriginal.jpeg}}
+    \legend{Source: \cite{pongmuseum:2021}}
+    \label{fig:pong}
+\end{figure}
+
+With time, the technological advances made possible for much more complex games to be created. Designing a game became much more nuanced and time consuming. 
+
+\subsection{Evolution of the video game industry}
+
+In 2020, the video game industry was already bigger than movies and North American sports combined. The gaming industry experienced a big growth thanks to the COVID-19 pandemic \cite{marketwatch:2019}. But even before the pandemic, the industry was already growing faster and faster through the decades, as shown in Figure \ref{fig:growth_graph}.
+
+\begin{figure}[h]
+    \caption{Video game industry revenue through the ages}
+    \centerline{\includegraphics[width=13cm]{images/introduction/industry_growth.png}}
+    \legend{Source: \cite{bloomberg:2019}}
+    \label{fig:growth_graph}
+\end{figure}
+
+The cost of making games has increased dramatically as well. The cost of making Final Fantasy 7 remake, which was released in April 2020, for example, was roughly \$200 million, around \$120 million more than the original Final Fantasy 7, which was released in January 1997 \cite{cbr:2021}.
+
+Triple-A games, which are games that are produced by mid-sized or major publishers \cite{steinberg:2007}, currently require hundreds of people to work over the period of years to develop new games. This is resulting in games not being as profitable for some developers, and few companies can afford developing long, diverse and polished games \cite{shaker:2016}.
+
+One of the methods to reduce the cost of game designing is going to be discussed next, which is procedural content generation (PCG), using algorithms to generate content automatically to the game.
+
+\section{Procedural content generation}
+
+In the context of video games, PCG is defined as "the algorithmic creation of game content with
+limited or indirect user input" \cite{togelius:2011}. In other words, PCG refers to software that is able to create game content by itself.
+
+According to \cite{doull:2008} there are 7 categories of PCG in games:
+
+\begin{itemize}
+\item \textbf{Runtime random level generation}: This is when game levels are generated while the game is being played. This is what people think of when PCG in games is mentioned. An algorithm is responsible for generating random or pseudo-random levels for the game.
+
+\item \textbf{Design of level content}: In this method, the generated content is used at the design stage to supplement human design skills. An algorithm can, for example, populate an environment created by the designer rapidly. Or the designer may choose specific generated levels to expand on.
+
+\item \textbf{Dynamic world generation}: This technique is used to dynamically grow the environment that the player interacts on by using random seeds. In this case, the generated maps are never held in memory except as temporary structures to display.
+
+\item \textbf{Instancing of in game entities}: In order to reach statistically insignificant chance of repetition, in-game entities (like monsters, items, non-playable characters (NPCs)) have some properties procedurally generated. These properties can be the position of the entity, its size, structure etc.
+
+\item \textbf{User mediated content}: This is a type of procedural generation where the user has the control. A range of possibilities is given to the users and they are responsible for putting them together in order to generate content.
+
+\item \textbf{Dynamic systems}: Some systems such as group behaviour or weather can be modelled using PCG techniques. This is widely used in combination of artificial intelligence (AI) in order to, for example, make NPCs react differently according to certain weather conditions.
+
+\item \textbf{Procedural puzzles and plot generation}: This category is about using PCG in order to generate individual puzzle elements to increase replayability, e.g. changing door codes. And games that have the plot generated by PCG are also included in this category.
+\end{itemize}
+
+An example of a game that was developed utilizing different PCG techniques is Electronic Arts's Spore. In this game, the player's objective is to evolve its own species, starting all the way from a microscopic organism until interstellar exploration. Entities on the game are generated by other players using in-game editors, which is an example of user mediated content generation. Worlds and galaxies are created through a combination of dynamic world generation and runtime random level generation. And even some character animations are created procedurally \cite{wright:2007}. Figure \ref{fig:spore} shows a user generated characters standing on a procedurally generated world.
+
+\begin{figure}[h]
+    \caption{Screenshot of Spore gameplay}
+    \centerline{\includegraphics[width=13cm]{images/introduction/spore.jpg}}
+    \legend{Source: \cite{ea:2008}}
+    \label{fig:spore}
+\end{figure}
+
+
+\section{Dungeons in games}
+
+One of the most notable applications of PCG in games is the creation of procedurally generated dungeons. These are labyrinthic environments where the player can explore, collect items, slay monsters, fall into traps etc. Although originally the term 'dungeon' refers to a labyrinth of prison cells, in game there are dungeons made of caverns, castles, forests, underwater etc \cite{shaker:2016}. 
+
+This definition of a dungeon can be probably tracked to the Dungeons and Dragons game, which is a tabletop role-playing game (RPG) that has been hugely influential in the development of video games throughout history. A specific type of computer RPG has spawned from the idea of exploring randomly generated dungeons: the roguelike genre. The name 'roguelike' comes from the 1980's game Rogue, which featured procedurally generated dungeons where the player had to explore in search of an amulet \cite{brewer:2016}. A screenshot of a typical Rogue session can be seen in Figure \ref{fig:rogue}.
+
+\begin{figure}[h]
+    \caption{Screenshot of Rogue gameplay}
+    \centerline{\includegraphics[width=13cm]{images/introduction/rogue.jpg}}
+    \legend{Source: \cite{epyx:1985}}
+    \label{fig:rogue}
+\end{figure}
+
+In \cite{melan:2006} it is suggested that the design of the dungeon structure is very important to the creation of a good dungeon map. For him, a good map design is one that embodies the factors that make dungeon-crawling fun: exploring, player decision-making, maintaining the pace of action, finding secrets. Four different basic forms of dungeon maps were presented, here shown on Figure \ref{fig:basic_dungeons}. 
+
+\begin{figure}[h]
+    \caption{Basic dungeon structures}
+    \centerline{\includegraphics[width=13cm]{images/introduction/basic_dungeon.png}}
+    \legend{Source: \cite{melan:2006}}
+    \label{fig:basic_dungeons}
+\end{figure}
+
+
+
+\input{chapters/introduction/objectives}

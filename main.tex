@@ -1,0 +1,59 @@
+\documentclass[ecp,tc,english]{inputs/iiufrgs}
+
+\usepackage[utf8]{inputenc}   % pacote para acentuação
+
+\usepackage{graphicx}           % pacote para importar figuras
+\usepackage{svg}
+
+\usepackage{times}              % pacote para usar fonte Adobe Times
+\usepackage{verbatim}
+
+\usepackage{pdfpages} % usado no anexo, para incluir arquivos PDF inteiros.
+\usepackage{adjustbox} % usado numa tabela que ficou muito larga
+
+\usepackage{csquotes}
+\usepackage{hyperref}
+\usepackage[hyperref=true,style=abnt,repeatfields=true]{biblatex}
+\usepackage{float} 
+\addbibresource{biblio.bib}
+
+\title{Procedural generation of cave-like maps for 2D top-down games}
+\author{Milani Rodrigues de Freitas}{Vinicius}
+\advisor[Prof.~Dr.]{Couto Barone}{Dante Augusto}
+\coadvisor[Dr.]{Batista Silva de Carvalho}{Leonardo Filipe}
+\date{}{2021}
+\location{Porto Alegre}{RS}
+
+\makeatletter
+
+\let\newtitle\@title
+\let\newauthor\@author
+\let\newdate\@date
+\makeatother
+
+\sloppy
+
+\begin{document}
+
+\input{capa}
+
+\keyword{video game}
+\keyword{procedural generation}
+\keyword{dungeon}
+\keyword{Unity}
+\keyword{cave}
+
+\maketitle
+
+\input{pre-textual}
+
+\input{chapters/introduction/index}
+\input{chapters/related_work/index}
+\input{chapters/proposal/index}
+\input{chapters/implementation/index}
+\input{chapters/survey/index}
+\input{chapters/conclusion}
+
+\printbibliography
+
+\end{document}
