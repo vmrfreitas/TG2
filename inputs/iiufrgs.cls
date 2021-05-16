@@ -394,10 +394,14 @@
   \noindent\nominataPRAPGname: \nominataPRAPG
 
   \noindent\nominataDirname: \nominataDir
+  
+  \noindent\nominataDirEngname: \nominataDirEng
 
   \noindent\nominataCoordname: \nominataCoord
 
   \noindent\nominataBibchefename: \nominataBibchefe
+
+  \noindent\nominataBibEngchefename: \nominataBibEngchefe
 
   \setlinespacing
   \vspace{18.25mm}

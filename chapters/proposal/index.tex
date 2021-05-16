@@ -1,12 +1,108 @@
 \chapter{Proposal}
+\label{chapter:proposal}
 
-In this chapter we will detail our proposed solution that was developed in order to achieve the objectives presented in the \nameref{sec:objectives} section. We will define some concepts that will be necessary in order to fully understand the next chapter, where the development process and difficulties found of the proposed solution will be described.
+In this chapter we will define some concepts that will be necessary to fully understand our proposal that was developed in order to achieve the objectives presented in section \ref{sec:objectives}. In the last section we will expand on the criteria for what makes a good video-game map.
 
+\section{Video-game maps}
 
-pegar do mestrado do leaonardo definição de mapa coisassin
+In the context of video games, a map corresponds to a game scenery inhabited by the player and other entities like monsters, NPCs, objects etc \cite{carvalho:2011}. The specific type of map that we have selected in this work is the 2D top-down type. This map perspective, also sometimes referred to as overhead view, bird's-eye view, Godview etc, have a camera angle that shows the player and the area around them from above. An example of a game with an overhead view is shown in Figure \ref{fig:pokemon}.
 
-falar de unity
+\begin{figure}[h]
+    \caption{Screenshot of Pokémon Gold gameplay}
+    \centerline{\includegraphics[width=6cm]{images/proposal/pokemon.png}}
+    \legend{Source: \cite{pokemon:1999}}
+    \label{fig:pokemon}
+\end{figure}
 
-falar das caverna
+\subsection{Map elements}
 
-por fim falar da proposta: gerar um bom mapa em unity, o que é um bom mapa,
+The tool chosen to develop our solution is the Unity game engine, which was released in 2005 and developed by Unity Technologies \cite{unity:2021}. Figure \ref{fig:unity_print} shows a screenshot of this tool with some important elements that will be described on the next items of this section. The description of such elements have been adapted from \cite{carvalho:2011}.
+
+\begin{figure}[h]
+    \caption{Screenshot of the Unity engine}
+    \centerline{\includegraphics[width=11cm]{images/proposal/unity_print.png}}
+    \legend{Source: Image provided by author}
+    \label{fig:unity_print}
+\end{figure}
+
+\subsubsection{Map}
+The map is represented here by a three-dimensional mesh of width \(w_{map}\) and height \(h_{map}\), with \{\(w_{map}, h_{map} \in \mathbb{N}|(w_{map}>0)\wedge(h_{map}>0)\)\}. Additionally, this mesh has a depth of \(l_{map}\) layers, with \{\(l_{map} \in \mathbb{N}|l_{map}\geq 1\)\}, in our specific case, \(l_{map} = 2\).
+
+The map is composed by a number of \(w_{map} \times h_{map}\) cells, in our case each cell has one or two tiles (which will be explained in a subsequent section) one per layer, creating what is called a tiled map. 
+
+\subsubsection{Layers}
+The layers are the different levels of the map where it's elements are distributed. In the scope of this work, there are two types of elements that will compose our maps, they are: ground and walls. The ground is the path where the player can walk on, and the walls are what define the structure of the cave maps and the player cannot walk on them. Therefore these two elements are organized in two separate layers, here called ground layer and collision layer. The collision layer is named as such because, in order to avoid letting the player walk on the walls, a collider\footnote{In the Unity engine, the collider component is added to GameObjects where there's need to simulate physical collision.} component was added to this layer.
+
+\subsubsection{Tiles}
+
+A tile is the entity that occupy the cells of the map mesh. Each tile is an image that represents some object to be inserted in the game, this image is of dimensions \((i*w_{cel})\times(j*h_{cel})\) with \(w_{cel}\) and \(h_{cel}\) representing, respectively, the width and height of a cell in the map, and \(i\) and \(j\) are constants where \{\(i, j \in \mathbb{N}|(1\leq i<w_{map})\wedge(1\leq j<h_{map})\)\}. In our specific case, \(w_{cel}=h_{cel}=16 {pixels}\) and all tiles used have \(i=j=1\). 
+\subsubsection{Tileset}
+
+A tileset is, as the name suggests, an image containing the set of tiles that will represent the game objects.
+
+The Unity engine divides the given tileset into a number of tiles that can be used by the developer to fill the map mesh and create an envinronment. The tileset used on this work is the "Zelda-like tileset", which was posted by \citeauthor{arm:2017} and is licensed in the public domain \citeyear{arm:2017}. Figure \ref{fig:tileset} shows the tileset, although only the tiles needed for walls and ground were used in this work, they will be shown in the next chapter.
+
+\begin{figure}[h]
+    \caption{Zelda-like tileset}
+    \centerline{\includegraphics[width=10cm]{images/proposal/overworld.png}}
+    \legend{Source: \cite{arm:2017}}
+    \label{fig:tileset}
+\end{figure}
+
+\section{Cave patterns}
+
+As will be discussed in the next section, one of the characteristics that make a good map is for it to have a natural look. Since we focused on cave-like maps, we researched for what would be a natural cave representation in a 2D top-down view.
+
+According to \cite{audra:2011}, Figure \ref{fig:cave_patterns} show some of the most common cave patterns. They are formed by having different types of sources of water interacting with different kinds of soil.
+
+\begin{figure}[h]
+    \caption{Common cave patterns}
+    \centerline{\includegraphics[width=6cm]{images/proposal/cave_patterns.png}}
+    \legend{Source: \cite{audra:2011}}
+    \label{fig:cave_patterns}
+\end{figure}
+
+It is outside of the scope of this work to give a larger description to each of the different cave patterns shown here, but it's important to note that this is an accurate representation of real-world caves and they were used as a reference for the generated maps.
+
+\section{What makes a good generated map}
+\label{sec:goodmap}
+
+At last, an important part of our proposal is to generate maps that have a set of qualities that make them be perceived as good or desirable maps.
+
+During the bibliographic research for these criteria, most of the findings related not only to the map but to the video-game level entirely, for example in \cite{preuss:2014} where the placement of enemies and treasures are also taken into consideration.
+
+However, there were some criteria found that made reference only to the map itself. Here are the qualities of a good generated map, according to bibliographic research:
+
+\begin{itemize}
+\item The generated maps should have a natural look, they shouldn't look as if they were generated by an algorithm \cite{shaker:2016} \cite{adams:2002}.
+\item Dungeon maps should have an entrance, an exit (sometimes being the same), and a path between them \cite{shaker:2016}.
+\item The Generated maps should look different from one another, to provide the player with an unique experience each time \cite{goncalves:2015} \cite{zapata:2014}.
+\item The generated maps should encourage players to explore \cite{ping:2020}.
+\item Borders are necessary on the generated maps, in order to prevent players and monsters from escaping them \cite{torrado:2020}.
+\end{itemize}
+
+To evaluate if the generated maps have the qualities cited here, we created a survey based on the one used here \cite{carvalho:2016}, which was developed using the ARCS model by Keller. Therefore, some of the elements for a good map that we will be evaluating are also adapted from the components of the ARCS model:
+
+\begin{itemize}
+    \item \textbf{Attention}:
+    \begin{itemize}
+        \item The design of the generated maps should be able to keep the player attention on the game.
+        \item The generated maps' design should be attractive to the players.
+    \end{itemize}
+    \item \textbf{Relevance}:
+    \begin{itemize}
+        \item The player should want to play a game that includes the generated maps.
+    \end{itemize}
+    \item \textbf{Confidence}: 
+    \begin{itemize}
+        \item The generated maps should not appear to be too hard for the player.
+        \item When looking at the map, the player should be able to comprehend it easily.
+    \end{itemize}
+    \item \textbf{Satisfaction}:
+    \begin{itemize}
+        \item The player should want to explore the map.
+    \end{itemize}
+\end{itemize}
+
+More information about the survey will be given in Chapter \ref{chapter:survey}.
+%  por fim falar da proposta: gerar um bom mapa em unity, o que é um bom mapa,

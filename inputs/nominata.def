@@ -12,18 +12,22 @@
 %
 
 % Reitoria
-\providecommand{\nominataReit}{Prof.~Carlos Andr{\'e} Bulh{\~o}es}
+\providecommand{\nominataReit}{Prof.~Carlos Andr{\'e} Bulh{\~o}es Mendes}
 \providecommand{\nominataReitname}{Reitor}
-\providecommand{\nominataPRCA}{Prof\textsuperscript{a}.~Patricia Pranke}
+\providecommand{\nominataPRCA}{Prof\textsuperscript{a}.~Patricia Helena Lucas Pranke}
 \providecommand{\nominataPRCAname}{Vice-Reitora}
 
 % PROPG
 \providecommand{\nominataPRAPG}{Prof.~Celso Giannetti Loureiro Chaves}
-\providecommand{\nominataPRAPGname}{Pr{\'o}-Reitor de P{\'o}s-Gradua{\c{c}}{\~a}o}
+\providecommand{\nominataPRAPGname}{Pr{\'o}-Reitora de Ensino (Gradua{\c{c}}{\~a}o e P{\'o}s-Gradua{\c{c}}{\~a}o)}
 
 % Instituto de Informática
 \providecommand{\nominataDir}{Prof\textsuperscript{a}.~Carla Maria Dal Sasso Freitas}
 \providecommand{\nominataDirname}{Diretora do Instituto de Inform{\'a}tica}
+
+\providecommand{\nominataDirEng}{Prof\textsuperscript{a}.~Carla Schwengber Ten Caten}
+\providecommand{\nominataDirEngname}{Diretora da Escola de Engenharia}
+
 
 % PPGC
 \providecommand{\nominataCoordPPGC}{Prof\textsuperscript{a}.~Luciana Salete Buriol}
@@ -37,6 +41,10 @@
 \providecommand{\nominataBibchefe}{Beatriz Regina Bastos Haro}
 \providecommand{\nominataBibchefename}{Bibliotec{\'a}ria-chefe do Instituto de Inform{\'a}tica}
 
+\providecommand{\nominataBibEngchefe}{Rosane Beatriz Allegretti Borges}
+\providecommand{\nominataBibEngchefename}{Bibliotec{\'a}ria-chefe da Escola de Engenharia}
+
+
 % INA (Informática Aplicada)
 \providecommand{\nominataChefeINA}{Prof.~Renata Galante}
 \providecommand{\nominataChefeINAname}{Chefe do \deptINA}
@@ -46,13 +54,13 @@
 \providecommand{\nominataChefeINTname}{Chefe do \deptINT}
 
 % Graduação
-\providecommand{\nominataPRAG}{Prof.~Vladimir Pinheiro do Nascimento}
-\providecommand{\nominataPRAGname}{Pr{\'o}-Reitor de Gradua{\c{c}}{\~a}o}
+\providecommand{\nominataPRAG}{Prof\textsuperscript{a}.~C{\'i}ntia In{\^e}s Boll}
+\providecommand{\nominataPRAGname}{Pr{\'o}-Reitora de Ensino (Gradua{\c{c}}{\~a}o e P{\'o}s-Gradua{\c{c}}{\~a}o)}
 
 %CIC
 \providecommand{\nominataCoordCIC}{Prof.~S{\'e}rgio Luis Cechin}
 \providecommand{\nominataCoordCICname}{Coordenador do Curso de Ci{\^e}ncia de Computa{\c{c}}{\~a}o}
 
 %ECP
-\providecommand{\nominataCoordECP}{Prof.~Andr{\'e} In{\'a}cio Reis}
+\providecommand{\nominataCoordECP}{Prof.~Walter Fetter Lages}
 \providecommand{\nominataCoordECPname}{Coordenador do Curso de Engenharia de Computa{\c{c}}{\~a}o}
