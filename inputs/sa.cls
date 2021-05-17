@@ -35,7 +35,7 @@
 \RequirePackage{times}
 \RequirePackage[english,brazilian]{babel}
 \AtBeginDocument{
-	\renewcommand{\refname}{REFER{\^E}NCIAS}
+	\renewcommand{\refname}{REFERENCES}
 }
 
 %==============================================================================

@@ -13,7 +13,7 @@
 % and redistributing these files
 %
 \@namedef{captionsbrazilian}{%
-	\def\bibname{Refer{\^e}ncias}%
+	\def\bibname{References}%
 	\def\abstractname{Resumo}%
 	\def\appendixname{Ap{\^e}ndice}%
 	\def\contentsname{Sum{\'a}rio}%
