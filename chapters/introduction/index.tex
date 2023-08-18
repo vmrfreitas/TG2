@@ -22,7 +22,7 @@ In time, the technological advances made possible for more complex games to be c
 
 \subsection{Evolution of the video game industry}
 
-In 2020, the video game industry was already bigger than the movie industry and North American sports combined. The gaming industry has also experienced a big growth thanks to the COVID-19 pandemic \cite{marketwatch:2019}, since players are having more time at home for their hobby. But even before the pandemic, the industry was already in fast-grow along the last decades, as shown in Figure \ref{fig:growth_graph}.
+In 2020, the video game industry was already bigger than the movie industry and North American sports combined. The gaming industry has also experienced a big growth thanks to the COVID-19 pandemic \cite{marketwatch:2019}, since players are having more time at home for their hobby. But even before the pandemic, the industry was already in fast-growth along the last decades, as shown in Figure \ref{fig:growth_graph}.
 
 \begin{figure}[h]
     \caption{Video game industry revenue through the ages}
@@ -46,13 +46,13 @@ limited or indirect user input" \cite{togelius:2011}. In other words, PCG refers
 According to \textcite{doull:2008} there are 7 categories of PCG in games:
 
 \begin{itemize}
-\item \textbf{Runtime random level generation}: the generation of game levels while the game is being played. This is what people often think of when PCG in games is mentioned. In this category, an algorithm is responsible for generating random or pseudo-random levels for the game.
+\item \textbf{Runtime random level generation}: the generation of game levels while the game is being played. This is what people often think of when PCG in games is mentioned. In this category, an algorithm is responsible for generating pseudo-random levels for the game.
 
 \item \textbf{Design of level content}: in this method, the automatically generated content is used at the level design stage to supplement human design skills. An algorithm can, for example, populate an environment created by the designer rapidly. Or the designer may choose specific generated levels to expand on.
 
 \item \textbf{Dynamic world generation}: This technique is used to dynamically grow the environment that the player interacts on by using random seeds. In this case, the generated maps are never held in memory except as temporary structures to display.
 
-\item \textbf{Instancing of in game entities}: in order to reach a statistically insignificant chance of repetition, in-game entities, such as like monsters, items, non-playable characters (NPCs), have some of their properties procedurally generated. These properties may be, for example, the position of the entity, its size, structure, etc.
+\item \textbf{Instancing of in game entities}: in order to reach a statistically insignificant chance of repetition, in-game entities, such as monsters, items, non-playable characters (NPCs), have some of their properties procedurally generated. These properties may be, for example, the position of the entity, its size, structure, etc.
 
 \item \textbf{User mediated content}: this is a type of procedural generation where the user is in control. The technique offers a range of possibilities to users, who are responsible for putting them together in order to generate content.
 
@@ -74,6 +74,8 @@ An example of a commercial game that was developed utilizing different PCG techn
 \section{Dungeons in games}
 
 One of the most notable applications of PCG in games is the creation of procedurally generated dungeons. A dungeon is a labyrinthic environment that the player can explore, as well as collect items, slay monsters, fall into traps, etc. Although originally the term "dungeon" refers to a labyrinth of prison cells, nowadays, there are dungeons representing caverns, castles, forests, underwater environments, etc \cite{shaker:2016}. 
+
+Procedural generation of dungeons is also an extensive area of research, as is shown in the survey from \textcite{viana:2019}. The survey shows that there are still challenges to overcome and areas to develop, such as the generation of 3D dungeons.
 
 This current definition of a dungeon can be probably tracked to the Dungeons and Dragons game, which is a tabletop Role-Playing Game (RPG) that had a huge influence in the development of video games throughout history. In fact, a specific type of computer RPG has spawned from the idea of exploring randomly generated dungeons: the roguelike genre. The name "roguelike" comes from the 1980's game Rogue, which featured procedurally generated dungeons that the player had to explore in search of an amulet \cite{brewer:2016}. A screenshot of a typical Rogue session can be seen in Figure \ref{fig:rogue}.
 

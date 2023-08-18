@@ -3,13 +3,13 @@
 
 On this chapter we will be explaining how the system was implemented, which algorithms that were used, the reason for choosing them, and what were the challenges faced during development.
 
-The system was developed in the Unity Game Engine, utilizing the C\# language. The basis for this work was started by following the video tutorial available at \textcite{taft:2019}, about creating a 2D top-down game in Unity. This tutorial laid our foundation for important concepts, like importing the tileset, understanding how to draw a map, the basics of collision, etc.
+The system was developed in the Unity Game Engine. The basis for this work was started by following the video tutorial available at \textcite{taft:2019}, about creating a 2D top-down game in Unity. This tutorial laid our foundation for important concepts. Another tutorial was used as inspiration for the procedural cave theme, available at \textcite{sebastian:2015}.
 
 It was after this point that the creation of the PCG system really started. To better understand its implementation, we will divide it in 7 steps and discuss each one in a different Section of this Chapter. The last Section will cover all of the user inputs that can be provided to the system in order to tune the map generation. However, first, there are still some information that are useful to understand all the steps from this point forward: 
 \begin{itemize}
     \item The generated map will be represented by a global matrix of integers with width \(w_{map}\) and height \(h_{map}\).
     \begin{itemize}
-        \item Its important to notice that \(w_{map}\) and \(h_{map}\) are user-defined parameters.
+        \item Its important to note that \(w_{map}\) and \(h_{map}\) are user-defined parameters.
     \end{itemize}
     \item Each individual position of this matrix will be referred to as a \emph{cell}.
     \item A cell of value \(1\) represents a \emph{wall}, a cell of value \(0\) represents the absence of a \emph{wall}, or a path.
@@ -20,7 +20,7 @@ It was after this point that the creation of the PCG system really started. To b
 \section{Create a randomly-filled base map}
 \label{sec:randomf}
 
-The first step taken was to have a randomly generated base map to start building upon. The generation of random or pseudo-random content is a part of most PCG techniques. In our case, the importance of the randomness is a reflection of one of the items for what is considered a good map, pointed on Section \ref{sec:goodmap}: "the Generated maps should look different from one another".
+The first step taken was to have a randomly generated base map to start building upon. The generation of pseudo-random content is a part of most PCG techniques. In our case, the importance of the randomness is a reflection of one of the items for what is considered a good map, pointed on Section \ref{sec:goodmap}: "the Generated maps should look different from one another".
 
 The creation of this base map is accomplished by the steps listed here in Algorithm \ref{alg:randomgen}.
 
@@ -141,7 +141,7 @@ Ensuring the connectivity between all rooms is important for, as mentioned on Se
 
 As the guideline above recalls, we need to make sure that every pair of \emph{Rooms} are connected, i.e., there is a way to reach one \emph{Room} by starting on any other \emph{Room}. Each \emph{Room} in the map can be viewed as a node in a graph, that way, we made use of a popular algorithm in graph theory to check if there's connectivity: Depth-First Search (DFS). DFS is an algorithm that starts at an arbitrary node of the graph and explores as far as possible along each branch before backtracking \cite{even:2011}.
 
-Figure \ref{fig:connectivity} shows a visual representation of the algorithm used in this step, which is described in Algorithm  \ref{alg:connectivity}. Each node of the graph represents a \emph{Room} in the map. In quadrant \(1\) we start with a map with fully disconnected \emph{Rooms}. Then, the algorithm begins by connecting each node to its closest node, as seen in quadrant \(2\); following that, it performs the DFS to check if connectivity is ensured; if not, it handles the sets of connected nodes a a single node, like is shown on quadrant \(3\), and then, redo the connectivity step, which leads to the result that can be seen in quadrant \(4\).
+Figure \ref{fig:connectivity} shows a visual representation of the algorithm used in this step, which is described in Algorithm  \ref{alg:connectivity}. Each node of the graph represents a \emph{Room} in the map. In quadrant \(1\) we start with a map with fully disconnected \emph{Rooms}. Then, the algorithm begins by connecting each node to its closest node, as seen in quadrant \(2\), this is done by checking the distance between each two border tiles between all \emph{Rooms} and connecting the closest two; following that, it performs the DFS to check if connectivity is ensured; if not, it handles the sets of connected nodes a a single node, like is shown on quadrant \(3\), and then, redo the connectivity step, which leads to the result that can be seen in quadrant \(4\).
 
 \begin{figure}[h]
     \caption{Visual representation of the connectivity algorithm.}
@@ -220,7 +220,7 @@ Finally, the last step of the generation is to place the tiles to their correspo
     \label{fig:wall_tiles}
 \end{figure}
 
-The first idea we had was to try to use a custom CA ruleset, where each cell had \(14\) possible states, one for each needed tile. However, after we assessed that a single execution of the ruleset through the map grid was enough to place all the tiles correctly, it was our understading that our algorithm could be better described as a morphological operation.
+The first idea we had was to try to use a custom CA ruleset, where each cell had \(14\) possible states, one for each needed tile. However, after we assessed that a single execution of the ruleset through the map grid was enough to place all the tiles correctly, it was our understanding that our algorithm could be better described as a morphological operation.
 
 This morphological operation, containing 14 rules, is here shown on Figure \ref{fig:ruleset}. The next item list serves to better understand the content of this Figure:
 
